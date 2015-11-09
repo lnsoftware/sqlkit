@@ -1,0 +1,61 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+	<head>
+		<title>SQL查询分析器</title>
+	</head>
+	
+	<body>
+		
+		<h2>Java Sql 查询分析器:</h2>
+		<form t:type="Form" t:id="sqlForm">
+			<table>
+				<tr>
+					<td><font color="red">*</font>数据库标示符</td>
+					<td><input t:type="TextField" t:id="dbFlag" t:value="dbFlag" size="20" /></td>
+				</tr>
+				<tr>
+					<td><font color="red">*</font>sql脚本</td>
+					<td>
+						<textarea t:type="TextArea" t:id="sql" t:value="sql" rows="5" cols="50"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="执行" />
+					</td>
+				</tr>
+			</table>
+		</form>
+		
+		<!-- 查询sql -->
+		<t:if test="operation?.equals('query')">
+			<t:if test="list">
+				<table cellspacing="1" cellpadding="3" bgcolor="#ccc" width="100%">
+					<thead>
+						<tr>
+							<t:loop t:source="columns" t:value="column">
+								<td align="center" height="30" bgcolor="#eee">${column}</td>
+							</t:loop>		
+						</tr>
+					</thead>
+					<tbody>
+						<t:loop t:source="list" t:value="lbean">
+							<tr>
+								<t:loop t:source="lbean.beans" t:value="bean">
+									<td align="center" height="30" bgcolor="#fff">${bean?.value}</td>
+								</t:loop>
+							</tr>
+						</t:loop>
+					</tbody>
+				</table>
+			</t:if>
+			<br />
+			<t:pages t:id="pager" />
+		</t:if>
+		
+		<!-- 更新sql -->
+		<t:if test="operation?.equals('update')">
+			影响记录数：${reflectCount}
+		</t:if>
+		
+	</body>
+</html>

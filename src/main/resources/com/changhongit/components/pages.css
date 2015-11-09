@@ -1,0 +1,51 @@
+.pages_div {
+    border: 0px;
+    font-family: "宋体";
+    font-size: 12px;
+    height: 100%;
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    display: inline;
+}
+
+.pages_span_button a{
+    display:inline-block;
+    border-radius: 3px 3px 3px 3px;
+    background-color:#d4d4d4;
+    border:1px solid #f2f2f2;
+    font-family:"宋体";
+    font-size:12px;
+    line-height:130%;
+    text-decoration:none;
+    color:#FFF;
+    cursor:pointer;
+    margin: 0 0px 0 0px;
+    padding: 2px 10px 2px 10px;
+    vertical-align: middle;
+}
+
+.pages_span_previous_button:hover {
+    cursor: default;
+}
+
+pages_span_button.pages_span_a_button, .pages_span_button a.pages_span_a_button{
+    background-color:#e7e7e7;
+    border:1px solid #cfcfcf;
+    color:#333;
+}
+.pages_span_button a.pages_span_a_button:hover, pages_span_button.pages_span_a_button:hover{
+    background-color:#5597D8;
+    border:1px solid #3072B3;
+    color:#fff;
+}
+
+.pages_span_input {
+    width: 20px;
+    font-family: "宋体";
+    font-size: 12px;
+    color: #333;
+    border: 1px solid #cfcfcf;
+    background-color: #f5f5f5;
+    border-radius: 3px 3px 3px 3px;
+}

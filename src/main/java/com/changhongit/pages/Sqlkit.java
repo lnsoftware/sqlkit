@@ -243,7 +243,7 @@ public class Sqlkit {
 		ResultSet rs = null;
 		try {
 			conn = C3P0Pool.getInstance().getConnection(dbFlag);
-			stmt = conn.createStatement();
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			rs = stmt.executeQuery(sql);
 			rs.last();
 			totalRow = rs.getRow();

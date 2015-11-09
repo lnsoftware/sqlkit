@@ -41,7 +41,7 @@
 						<t:loop t:source="list" t:value="lbean">
 							<tr>
 								<t:loop t:source="lbean.beans" t:value="bean">
-									<td align="center" height="30" bgcolor="#fff">${bean?.value}</td>
+									<td nowrap="nowrap" align="center" height="30" bgcolor="#fff">${bean?.value}</td>
 								</t:loop>
 							</tr>
 						</t:loop>
